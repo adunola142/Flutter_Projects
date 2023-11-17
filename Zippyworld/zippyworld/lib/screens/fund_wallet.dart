@@ -32,13 +32,19 @@ class FundWallet extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          'assets/images/menu.png',
-                          width: 100.w,
-                          height: 100.h,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/images/menu.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
                         ),
+                      ),
+                      SizedBox(
+                        width: 16.w,
                       ),
                       Text(
                         'Fund Wallet',

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/buttons.dart';
+import 'package:zippyworld/screens/onboarding.dart';
+import 'package:zippyworld/screens/confirm_otp.dart';
+import 'package:zippyworld/screens/personal_info.dart';
+import 'package:zippyworld/screens/register_wobvn.dart';
 
 class Register1 extends StatelessWidget {
   const Register1({super.key});
@@ -30,16 +34,29 @@ class Register1 extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Align(
-                      alignment: Alignment.center,
-                      child: Image.asset(
-                        'assets/images/back_arrow.png',
-                        width: 100.w,
-                        height: 100.h,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Onboarding(),
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/images/back_arrow.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
-                      height: 100.w,
+                      width: 16.w,
                     ),
                     Text(
                       'Register with BVN',
@@ -152,28 +169,47 @@ class Register1 extends StatelessWidget {
                       height: 26.h,
                     ),
                     Button(
-                        text: "Verify",
-                        backgroundColor: const Color(0xFF127EC8),
-                        textStyle: TextStyle(
-                          color: Colors.white,
-                          fontSize: 13.sp,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.w600,
-                          height: 0,
-                        ),
-                        onPressed: () {}),
+                      width: 328.w,
+                      text: "Verify",
+                      backgroundColor: const Color(0xFF127EC8),
+                      textStyle: TextStyle(
+                        color: Colors.white,
+                        fontSize: 13.sp,
+                        fontFamily: 'Nunito',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ConfirmOtp(),
+                          ),
+                        );
+                      },
+                    ),
                     SizedBox(
                       height: 20.w,
                     ),
-                    Text(
-                      "I don't have a BVN",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14.sp,
-                        fontStyle: FontStyle.italic,
-                        fontFamily: 'Nunito',
-                        fontWeight: FontWeight.w500,
-                        height: 0,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterWithoutBvn(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "I don't have a BVN",
+                        style: TextStyle(
+                          color: const Color(0xFFC4C4C4),
+                          fontSize: 14.sp,
+                          fontStyle: FontStyle.italic,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
                       ),
                     )
                   ],

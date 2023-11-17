@@ -8,12 +8,12 @@ class LabeledTextField extends StatelessWidget {
   final Image suffixIcon;
 
   const LabeledTextField({
-    super.key,
+    Key? key,
     required this.label,
     required this.hintText,
     this.isNumber = false,
     this.suffixIcon = const Image(image: AssetImage('')),
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +58,11 @@ class LabeledTextField extends StatelessWidget {
               ),
               hintText: hintText,
               hintStyle: TextStyle(
-                color: Colors.black,
+                // Adjust the style here
+                color: Colors.black.withOpacity(0.6), // Example: 60% opacity
                 fontSize: 12.sp,
                 fontFamily: 'Nunito',
-                fontWeight: FontWeight.w300,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ),

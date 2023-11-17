@@ -27,28 +27,34 @@ class Wallet extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          'assets/images/menu.png',
-                          width: 100.w,
-                          height: 100.h,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/images/menu.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'My Wallet',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16.sp,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
+                        SizedBox(
+                          width: 16.w,
                         ),
-                      )
-                    ],
+                        Text(
+                          'My Wallet',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16.sp,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -129,6 +135,17 @@ class Wallet extends StatelessWidget {
               SizedBox(
                 height: 50.h,
               ),
+              Text(
+                'Current month',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black.withOpacity(0.5),
+                  fontSize: 13.sp,
+                  fontFamily: 'Nunito',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -148,7 +165,7 @@ class Wallet extends StatelessWidget {
                             width: 8.49.w,
                             height: 11.66.h,
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 20.h,
                           ),
                           Text.rich(

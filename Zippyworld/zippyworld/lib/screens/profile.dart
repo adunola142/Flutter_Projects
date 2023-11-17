@@ -31,13 +31,19 @@ class Profile extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          'assets/images/menu.png',
-                          width: 100.w,
-                          height: 100.h,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/images/menu.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
                         ),
+                      ),
+                      SizedBox(
+                        width: 16.w,
                       ),
                       Text(
                         'My Profile',
@@ -185,6 +191,7 @@ class Profile extends StatelessWidget {
                       height: 20.h,
                     ),
                     Button(
+                      width: 328.w,
                       icon: Icons.lock,
                       text: 'Change Pin',
                       backgroundColor: const Color(0xFF127EC8),
@@ -201,6 +208,7 @@ class Profile extends StatelessWidget {
                       height: 10.h,
                     ),
                     Button(
+                      width: 328.w,
                       icon: Icons.password,
                       text: 'Change Security Answer',
                       backgroundColor: const Color(0xFFD9EAF6),

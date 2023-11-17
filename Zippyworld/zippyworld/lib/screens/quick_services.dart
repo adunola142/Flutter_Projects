@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/arrow_button.dart';
+import 'package:zippyworld/screens/buy_airtime.dart';
+import 'package:zippyworld/screens/onboarding.dart';
 
 class QuickServices extends StatelessWidget {
   const QuickServices({super.key});
@@ -30,16 +32,29 @@ class QuickServices extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Align(
-                      alignment: Alignment.center,
-                      child: Image.asset(
-                        'assets/images/back_arrow.png',
-                        width: 100.w,
-                        height: 100.h,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Onboarding(),
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/images/back_arrow.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
-                      height: 10.w,
+                      width: 16.w,
                     ),
                     Text(
                       'Quick Services',
@@ -63,6 +78,12 @@ class QuickServices extends StatelessWidget {
                     buttonText: 'Buy airtime',
                     onTap: () {
                       // Handle button tap
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BuyAirtime(),
+                        ),
+                      );
                     },
                   ),
                   Image.asset(

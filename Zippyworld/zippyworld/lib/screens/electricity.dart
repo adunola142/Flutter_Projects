@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/arrow_button.dart';
 
-class AirtimeAndData extends StatelessWidget {
-  const AirtimeAndData({super.key});
+class Electricity extends StatelessWidget {
+  const Electricity({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class AirtimeAndData extends StatelessWidget {
                       width: 16.w,
                     ),
                     Text(
-                      'Airtime and Data',
+                      'ELectricity',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.sp,
@@ -63,7 +63,7 @@ class AirtimeAndData extends StatelessWidget {
               child: Row(
                 children: [
                   CustomButton(
-                    buttonText: 'Buy Airtime',
+                    buttonText: 'Zippy Platinum',
                     onTap: () {
                       // Handle button tap
                     },
@@ -81,7 +81,7 @@ class AirtimeAndData extends StatelessWidget {
               child: Row(
                 children: [
                   CustomButton(
-                    buttonText: 'Buy Data',
+                    buttonText: 'Zippy Diamond',
                     onTap: () {
                       // Handle button tap
                     },

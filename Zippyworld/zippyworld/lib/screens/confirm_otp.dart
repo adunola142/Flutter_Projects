@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/buttons.dart';
+import 'package:zippyworld/screens/personal_info.dart';
+import 'package:zippyworld/screens/register_withbvn.dart';
 
-class Register2 extends StatelessWidget {
-  const Register2({super.key});
+class ConfirmOtp extends StatelessWidget {
+  const ConfirmOtp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,19 +32,32 @@ class Register2 extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Align(
-                      alignment: Alignment.center,
-                      child: Image.asset(
-                        'assets/images/back_arrow.png',
-                        width: 100.w,
-                        height: 100.h,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Register1(),
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/images/back_arrow.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
-                      height: 100.w,
+                      width: 16.w,
                     ),
                     Text(
-                      'Register with BVN',
+                      'Confirm OTP',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.sp,
@@ -130,14 +145,21 @@ class Register2 extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           height: 0,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PersonalInfomation(),
+                            ),
+                          );
+                        }),
                     SizedBox(
                       height: 20.w,
                     ),
                     Text(
                       'I didn’t get OTP',
                       style: TextStyle(
-                        color: Colors.black,
+                        color: const Color(0xFFC4C4C4),
                         fontSize: 14.sp,
                         fontStyle: FontStyle.italic,
                         fontFamily: 'Nunito',

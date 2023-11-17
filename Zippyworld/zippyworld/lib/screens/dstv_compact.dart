@@ -4,8 +4,8 @@ import 'package:zippyworld/components/buttons.dart';
 import 'package:zippyworld/components/drop_down.dart';
 import 'package:zippyworld/components/textbox.dart';
 
-class Register3 extends StatelessWidget {
-  const Register3({super.key});
+class DstvCompact extends StatelessWidget {
+  const DstvCompact({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,19 +33,22 @@ class Register3 extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Align(
-                          alignment: Alignment.center,
-                          child: Image.asset(
-                            'assets/images/back_arrow.png',
-                            width: 100.w,
-                            height: 100.h,
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              'assets/images/back_arrow.png',
+                              width: 24.w,
+                              height: 24.h,
+                            ),
                           ),
                         ),
                         SizedBox(
-                          height: 100.w,
+                          width: 16.w,
                         ),
                         Text(
-                          'Register with BVN',
+                          'DSTV Compact',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 16.sp,
@@ -64,6 +67,38 @@ class Register3 extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          'assets/images/bookmark.png',
+                          width: 12.80.w,
+                          height: 16.h,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      Text(
+                        'choose beneficiary',
+                        style: TextStyle(
+                          color: const Color(0xFF127EC8),
+                          fontSize: 13.sp,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.w600,
+                          height: 0,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
                   child: Column(
                     children: [
@@ -72,7 +107,18 @@ class Register3 extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Phone Number:',
+                            label: 'Product:',
+                            hintText: 'DSTV Compact',
+                            isNumber: true,
+                          ),
+                        ),
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 8.0),
+                          child: LabeledTextField(
+                            label: 'Card number:',
                             hintText: '-',
                             isNumber: true,
                           ),
@@ -83,18 +129,7 @@ class Register3 extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Confirm Phonenumber:',
-                            hintText: '-',
-                            isNumber: true,
-                          ),
-                        ),
-                      ),
-                      const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
-                          child: LabeledTextField(
-                            label: 'First name',
+                            label: 'Card name',
                             hintText: '-',
                             isNumber: false,
                           ),
@@ -105,20 +140,36 @@ class Register3 extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Last name',
+                            label: 'Card account number',
                             hintText: '-',
                             isNumber: false,
                           ),
                         ),
                       ),
-                      const Align(
+                      Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
-                          child: LabeledTextField(
-                            label: 'Email address',
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: DropdownFormField(
                             hintText: '-',
-                            isNumber: false,
+                            items: const [
+                              DropdownMenuItem(
+                                value: 'option1',
+                                child: Text('1 month'),
+                              ),
+                              DropdownMenuItem(
+                                value: 'option2',
+                                child: Text('2 month'),
+                              ),
+                              DropdownMenuItem(
+                                value: 'option3',
+                                child: Text("6 month"),
+                              ),
+                            ],
+                            onChanged: (value) {
+                              // Handle dropdown selection
+                            },
+                            label: 'Subscription period',
                           ),
                         ),
                       ),
@@ -145,62 +196,72 @@ class Register3 extends StatelessWidget {
                             onChanged: (value) {
                               // Handle dropdown selection
                             },
-                            label: 'Gender',
+                            label: 'Add-ons(optional)',
                           ),
                         ),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: DropdownFormField(
-                            hintText: '-',
-                            items: const [
-                              DropdownMenuItem(
-                                value: 'option1',
-                                child: Text('My first pet'),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option2',
-                                child: Text("My first daughter's name"),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option3',
-                                child: Text("My Primary school"),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option4',
-                                child: Text("My Secondary school"),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option5',
-                                child: Text("My first son's name"),
-                              ),
-                            ],
-                            onChanged: (value) {
-                              // Handle dropdown selection
-                            },
-                            label: 'Security Question',
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
+                          padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Create Transaction PIN:',
+                            label: 'Total Amount:',
                             hintText: '-',
-                            suffixIcon: Image.asset(
-                              'assets/images/icon2.png',
-                              width: 100.w,
-                              height: 100.h,
+                            isNumber: true,
+                          ),
+                        ),
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 8.0),
+                          child: LabeledTextField(
+                            label: 'Description(optional):',
+                            hintText: '-',
+                            isNumber: true,
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              'assets/images/bookmark2.png',
+                              width: 9.60.w,
+                              height: 12.h,
                             ),
                           ),
-                        ),
+                          SizedBox(
+                            width: 5.w,
+                          ),
+                          Text(
+                            'Save as beneficiary',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 12.sp,
+                              fontFamily: 'Nunito',
+                              fontWeight: FontWeight.w400,
+                              height: 0,
+                            ),
+                          ),
+                          const Spacer(),
+                          Align(
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              'assets/images/toggle.png',
+                              width: 24.w,
+                              height: 24.h,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 40.h,
                       ),
                       Button(
-                        text: "Verify",
+                        text: "Continue",
                         backgroundColor: const Color(0xFF127EC8),
                         textStyle: TextStyle(
                           color: Colors.white,

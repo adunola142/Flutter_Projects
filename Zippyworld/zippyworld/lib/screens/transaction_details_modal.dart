@@ -32,21 +32,25 @@ class TransactionDetailsModal extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end, // Added this line
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Image.asset(
-                        'assets/images/x.png',
-                        width: 100.w,
-                        height: 100.h,
-                      ),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment:
+                          MainAxisAlignment.end, // Added this line
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          'assets/images/x.png',
+                          width: 24.w,
+                          height: 24.h,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
               SizedBox(
-                height: 24.h,
+                height: 16.h,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/arrow_button.dart';
 
-class AirtimeAndData extends StatelessWidget {
-  const AirtimeAndData({super.key});
+class Dstv extends StatelessWidget {
+  const Dstv({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +42,10 @@ class AirtimeAndData extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 16.w,
+                      width: 10.w,
                     ),
                     Text(
-                      'Airtime and Data',
+                      'DSTV',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.sp,
@@ -63,7 +63,7 @@ class AirtimeAndData extends StatelessWidget {
               child: Row(
                 children: [
                   CustomButton(
-                    buttonText: 'Buy Airtime',
+                    buttonText: 'DSTV Compact',
                     onTap: () {
                       // Handle button tap
                     },
@@ -81,7 +81,43 @@ class AirtimeAndData extends StatelessWidget {
               child: Row(
                 children: [
                   CustomButton(
-                    buttonText: 'Buy Data',
+                    buttonText: 'DSTV Compact Plus',
+                    onTap: () {
+                      // Handle button tap
+                    },
+                  ),
+                  Image.asset(
+                    'assets/images/front_arrow.png',
+                    width: 20.w,
+                    height: 20.h,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(6.w),
+              child: Row(
+                children: [
+                  CustomButton(
+                    buttonText: 'DSTV Premium',
+                    onTap: () {
+                      // Handle button tap
+                    },
+                  ),
+                  Image.asset(
+                    'assets/images/front_arrow.png',
+                    width: 20.w,
+                    height: 20.h,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(6.w),
+              child: Row(
+                children: [
+                  CustomButton(
+                    buttonText: 'DSTV Other',
                     onTap: () {
                       // Handle button tap
                     },

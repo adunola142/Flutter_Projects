@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zippyworld/screens/quick_services.dart';
+import 'package:zippyworld/screens/register_withbvn.dart';
+import 'package:zippyworld/screens/personal_info.dart';
 
 class Onboarding extends StatelessWidget {
   const Onboarding({Key? key}) : super(key: key);
@@ -87,7 +90,14 @@ class Onboarding extends StatelessWidget {
                         SizedBox(width: 20.w),
                         Expanded(
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Register1(),
+                                ),
+                              );
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white.withOpacity(0.1),
                               foregroundColor: const Color(0xFF127EC8),
@@ -118,12 +128,24 @@ class Onboarding extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/images/icon2.png',
-                          width: 100.w,
-                          height: 100.h,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const QuickServices(),
+                              ),
+                            );
+                          },
+                          child: Image.asset(
+                            'assets/images/icon2.png',
+                            width: 42.w,
+                            height: 42.h,
+                          ),
                         ),
-                        SizedBox(height: 5.h),
+                        SizedBox(
+                          height: 10.h,
+                        ),
                         Text(
                           'Quick services',
                           style: TextStyle(
