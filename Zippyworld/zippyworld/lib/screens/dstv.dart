@@ -32,12 +32,17 @@ class Dstv extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          'assets/images/back_arrow.png',
-                          width: 24.w,
-                          height: 24.h,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/images/back_arrow.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
                         ),
                       ),
                     ),

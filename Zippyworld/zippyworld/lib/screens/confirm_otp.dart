@@ -34,12 +34,7 @@ class ConfirmOtp extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Register1(),
-                          ),
-                        );
+                        Navigator.pop(context);
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),

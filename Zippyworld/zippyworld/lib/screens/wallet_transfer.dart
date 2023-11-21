@@ -4,8 +4,8 @@ import 'package:zippyworld/components/buttons.dart';
 import 'package:zippyworld/components/drop_down.dart';
 import 'package:zippyworld/components/textbox.dart';
 
-class DstvCompact extends StatelessWidget {
-  const DstvCompact({super.key});
+class WalletTransfer extends StatelessWidget {
+  const WalletTransfer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,19 +33,16 @@ class DstvCompact extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Image.asset(
-                                'assets/images/back_arrow.png',
-                                width: 24.w,
-                                height: 24.h,
-                              ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              'assets/images/back_arrow.png',
+                              width: 24.w,
+                              height: 24.h,
                             ),
                           ),
                         ),
@@ -53,7 +50,7 @@ class DstvCompact extends StatelessWidget {
                           width: 16.w,
                         ),
                         Text(
-                          'DSTV Compact',
+                          'Wallet transfer',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 16.sp,
@@ -68,7 +65,7 @@ class DstvCompact extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 23.h,
+                height: 40.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -102,6 +99,9 @@ class DstvCompact extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 23.h,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
@@ -112,8 +112,8 @@ class DstvCompact extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Product:',
-                            hintText: 'DSTV Compact',
+                            label: 'Wallet account:',
+                            hintText: '08028019946',
                             isNumber: true,
                           ),
                         ),
@@ -123,7 +123,7 @@ class DstvCompact extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Card number:',
+                            label: 'Reciepient wallet number:',
                             hintText: '-',
                             isNumber: true,
                           ),
@@ -134,7 +134,7 @@ class DstvCompact extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Card name',
+                            label: 'Amount',
                             hintText: '-',
                             isNumber: false,
                           ),
@@ -145,127 +145,73 @@ class DstvCompact extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Card account number',
-                            hintText: '-',
-                            isNumber: false,
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: DropdownFormField(
-                            hintText: '-',
-                            items: const [
-                              DropdownMenuItem(
-                                value: 'option1',
-                                child: Text('1 month'),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option2',
-                                child: Text('2 month'),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option3',
-                                child: Text("6 month"),
-                              ),
-                            ],
-                            onChanged: (value) {
-                              // Handle dropdown selection
-                            },
-                            label: 'Subscription period',
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: DropdownFormField(
-                            hintText: '-',
-                            items: const [
-                              DropdownMenuItem(
-                                value: 'option1',
-                                child: Text('Male'),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option2',
-                                child: Text('Female'),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option3',
-                                child: Text("Don't want to say"),
-                              ),
-                            ],
-                            onChanged: (value) {
-                              // Handle dropdown selection
-                            },
-                            label: 'Add-ons(optional)',
-                          ),
-                        ),
-                      ),
-                      const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
-                          child: LabeledTextField(
-                            label: 'Total Amount:',
+                            label: 'Description(optional)',
                             hintText: '-',
                             isNumber: true,
                           ),
                         ),
                       ),
-                      const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
-                          child: LabeledTextField(
-                            label: 'Description(optional):',
-                            hintText: '-',
-                            isNumber: true,
+                      SizedBox(
+                        height: 40.h,
+                      ),
+                      Container(
+                        width: 328.w,
+                        height: 48.h,
+                        decoration: ShapeDecoration(
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              width: 1,
+                              color:
+                                  Colors.black.withOpacity(0.05000000074505806),
+                            ),
+                            borderRadius: BorderRadius.circular(2),
                           ),
                         ),
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Image.asset(
-                              'assets/images/bookmark2.png',
-                              width: 9.60.w,
-                              height: 12.h,
-                            ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Align(
+                                alignment: Alignment.center,
+                                child: Image.asset(
+                                  'assets/images/bookmark2.png',
+                                  width: 9.60.w,
+                                  height: 12.h,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              Text(
+                                'Save as beneficiary',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 12.sp,
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.w400,
+                                  height: 0,
+                                ),
+                              ),
+                              const Spacer(),
+                              Align(
+                                alignment: Alignment.center,
+                                child: Image.asset(
+                                  'assets/images/toggle.png',
+                                  width: 24.w,
+                                  height: 24.h,
+                                ),
+                              ),
+                            ],
                           ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Text(
-                            'Save as beneficiary',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12.sp,
-                              fontFamily: 'Nunito',
-                              fontWeight: FontWeight.w400,
-                              height: 0,
-                            ),
-                          ),
-                          const Spacer(),
-                          Align(
-                            alignment: Alignment.center,
-                            child: Image.asset(
-                              'assets/images/toggle.png',
-                              width: 24.w,
-                              height: 24.h,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                       SizedBox(
                         height: 40.h,
                       ),
                       Button(
+                        width: 328.w,
                         text: "Continue",
                         backgroundColor: const Color(0xFF127EC8),
                         textStyle: TextStyle(

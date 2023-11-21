@@ -4,8 +4,8 @@ import 'package:zippyworld/components/buttons.dart';
 import 'package:zippyworld/components/drop_down.dart';
 import 'package:zippyworld/components/textbox.dart';
 
-class ElectricitySub extends StatelessWidget {
-  const ElectricitySub({super.key});
+class BankTransfer extends StatelessWidget {
+  const BankTransfer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class ElectricitySub extends StatelessWidget {
                           width: 16.w,
                         ),
                         Text(
-                          'Electricity',
+                          'Bank transfer',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 16.sp,
@@ -77,7 +77,18 @@ class ElectricitySub extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Meter number:',
+                            label: 'Wallet account:',
+                            hintText: '08028019946',
+                            isNumber: true,
+                          ),
+                        ),
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 8.0),
+                          child: LabeledTextField(
+                            label: 'Sender phonenumber:',
                             hintText: '-',
                             isNumber: true,
                           ),
@@ -88,111 +99,33 @@ class ElectricitySub extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Customer name:',
+                            label: 'Bank',
+                            hintText: 'Zenith bank',
+                            isNumber: true,
+                          ),
+                        ),
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 8.0),
+                          child: LabeledTextField(
+                            label: 'Account number',
                             hintText: '-',
                             isNumber: true,
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: DropdownFormField(
-                            hintText: '-',
-                            items: const [
-                              DropdownMenuItem(
-                                value: 'option1',
-                                child: Text('IKEJA'),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option2',
-                                child: Text('IBEDC'),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option3',
-                                child: Text("EKEDC"),
-                              ),
-                            ],
-                            onChanged: (value) {
-                              // Handle dropdown selection
-                            },
-                            label: 'Electricity disco',
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: DropdownFormField(
-                            hintText: '-',
-                            items: const [
-                              DropdownMenuItem(
-                                value: 'option1',
-                                child: Text('Prepaid'),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option2',
-                                child: Text('Postpaid'),
-                              ),
-                              DropdownMenuItem(
-                                value: 'option3',
-                                child: Text("Others"),
-                              ),
-                            ],
-                            onChanged: (value) {
-                              // Handle dropdown selection
-                            },
-                            label: 'Acount type',
-                          ),
-                        ),
-                      ),
                       const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
                           child: LabeledTextField(
-                            label: 'Phonenumber',
+                            label: 'Amount',
                             hintText: '-',
                             isNumber: false,
                           ),
                         ),
-                      ),
-                      const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
-                          child: LabeledTextField(
-                            label: 'email',
-                            hintText: '-',
-                            isNumber: false,
-                          ),
-                        ),
-                      ),
-                      const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
-                          child: LabeledTextField(
-                            label: 'amount',
-                            hintText: '-',
-                            isNumber: false,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        'Expected token: 0.00',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 10.sp,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10.h,
                       ),
                       const Align(
                         alignment: Alignment.centerLeft,
@@ -205,40 +138,61 @@ class ElectricitySub extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Image.asset(
-                              'assets/images/bookmark2.png',
-                              width: 9.60.w,
-                              height: 12.h,
+                      SizedBox(
+                        height: 40.h,
+                      ),
+                      Container(
+                        width: 328.w,
+                        height: 48.h,
+                        decoration: ShapeDecoration(
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              width: 1,
+                              color:
+                                  Colors.black.withOpacity(0.05000000074505806),
                             ),
+                            borderRadius: BorderRadius.circular(2),
                           ),
-                          SizedBox(
-                            width: 5.w,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Align(
+                                alignment: Alignment.center,
+                                child: Image.asset(
+                                  'assets/images/bookmark2.png',
+                                  width: 9.60.w,
+                                  height: 12.h,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              Text(
+                                'Save as beneficiary',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 12.sp,
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.w400,
+                                  height: 0,
+                                ),
+                              ),
+                              const Spacer(),
+                              Align(
+                                alignment: Alignment.center,
+                                child: Image.asset(
+                                  'assets/images/toggle.png',
+                                  width: 24.w,
+                                  height: 24.h,
+                                ),
+                              ),
+                            ],
                           ),
-                          Text(
-                            'Save as beneficiary',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12.sp,
-                              fontFamily: 'Nunito',
-                              fontWeight: FontWeight.w400,
-                              height: 0,
-                            ),
-                          ),
-                          const Spacer(),
-                          Align(
-                            alignment: Alignment.center,
-                            child: Image.asset(
-                              'assets/images/toggle.png',
-                              width: 24.w,
-                              height: 24.h,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                       SizedBox(
                         height: 40.h,

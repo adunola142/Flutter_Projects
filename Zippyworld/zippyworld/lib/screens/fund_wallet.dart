@@ -133,6 +133,7 @@ class FundWallet extends StatelessWidget {
                 height: 40.h,
               ),
               Button(
+                  width: 328.w,
                   text: "Confirm",
                   backgroundColor: const Color(0xFF127EC8),
                   textStyle: TextStyle(

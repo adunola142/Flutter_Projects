@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/arrow_button.dart';
-import 'package:zippyworld/screens/buy_airtime.dart';
-import 'package:zippyworld/screens/buy_data.dart';
+import 'package:zippyworld/screens/electricity_sub.dart';
+import 'package:zippyworld/screens/select_bank.dart';
+import 'package:zippyworld/screens/wallet_transfer.dart';
 
-class AirtimeAndData extends StatelessWidget {
-  const AirtimeAndData({super.key});
+class SendMoney extends StatelessWidget {
+  const SendMoney({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class AirtimeAndData extends StatelessWidget {
                       width: 16.w,
                     ),
                     Text(
-                      'Airtime and Data',
+                      'Send Money',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.sp,
@@ -70,11 +71,13 @@ class AirtimeAndData extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const BuyAirtime(),
-                  ),
+                showModalBottomSheet<void>(
+                  isScrollControlled: true,
+                  isDismissible: true,
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const SelectBank();
+                  },
                 );
               },
               child: ClipRRect(
@@ -83,7 +86,7 @@ class AirtimeAndData extends StatelessWidget {
                   width: 328.w,
                   height: 160.h,
                   child: Image.asset(
-                    'assets/images/buyairtime.png',
+                    'assets/images/banktransfer.png',
                     width: 328.w,
                     height: 160.h,
                     fit: BoxFit.cover,
@@ -99,7 +102,7 @@ class AirtimeAndData extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>  BuyData(),
+                    builder: (context) => const WalletTransfer(),
                   ),
                 );
               },
@@ -109,14 +112,14 @@ class AirtimeAndData extends StatelessWidget {
                   width: 328.w,
                   height: 160.h,
                   child: Image.asset(
-                    'assets/images/buydata.png',
+                    'assets/images/wallettransfer.png',
                     width: 328.w,
                     height: 160.h,
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

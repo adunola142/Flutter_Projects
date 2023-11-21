@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/buttons.dart';
+import 'package:zippyworld/components/image_tile.dart';
+import 'package:zippyworld/screens/airtime_and_data.dart';
+import 'package:zippyworld/screens/electricity_sub.dart';
+import 'package:zippyworld/screens/fund_wallet.dart';
+import 'package:zippyworld/screens/send_money.dart';
+import 'package:zippyworld/screens/tv_subscription.dart';
+import 'package:zippyworld/screens/vehicle_reg.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -138,7 +145,14 @@ class Dashboard extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         height: 0,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SendMoney(),
+                          ),
+                        );
+                      },
                     ),
                     const Spacer(),
                     Button(
@@ -157,7 +171,14 @@ class Dashboard extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         height: 0,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FundWallet(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -218,317 +239,190 @@ class Dashboard extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Container(
-                          width: 109.33.w,
-                          height: 79.h,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignOutside,
-                                color: Colors.black.withOpacity(0),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AirtimeAndData(),
                               ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          child: Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    width: 35.w,
-                                    height: 35.w,
-                                    decoration: ShapeDecoration(
-                                      color: const Color(0x19FC573B),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(35),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: Image.asset(
-                                        'assets/images/phone.png',
-                                        width: 14.w,
-                                        height: 14.h,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'Airtime\nand Data',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
+                            );
+                          },
+                          child: Container(
+                            width: 109.33.w,
+                            height: 79.h,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                  color: Colors.black.withOpacity(0),
                                 ),
-                              )
-                            ],
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 35.w,
+                                      height: 35.w,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0x19FC573B),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(35),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/phone.png',
+                                          width: 14.w,
+                                          height: 14.h,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'Airtime\nand Data',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.sp,
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                        Container(
-                          width: 109.33.w,
-                          height: 79.h,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignOutside,
-                                color: Colors.black.withOpacity(0),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const TvSubscriptiption(),
                               ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          child: Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    width: 35.w,
-                                    height: 35.w,
-                                    decoration: ShapeDecoration(
-                                      color: const Color(0x19127EC8),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(35),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: Image.asset(
-                                        'assets/images/tv.png',
-                                        width: 14.w,
-                                        height: 14.h,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'TV\nSubscription',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
+                            );
+                          },
+                          child: Container(
+                            width: 109.33.w,
+                            height: 79.h,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                  color: Colors.black.withOpacity(0),
                                 ),
-                              )
-                            ],
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 35.w,
+                                      height: 35.w,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0x19127EC8),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(35),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/tv.png',
+                                          width: 14.w,
+                                          height: 14.h,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'TV\nSubscription',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.sp,
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                        Container(
-                          width: 109.33.w,
-                          height: 79.h,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignOutside,
-                                color: Colors.black.withOpacity(0),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ElectricitySub(),
                               ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          child: Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    width: 35.w,
-                                    height: 35.w,
-                                    decoration: ShapeDecoration(
-                                      color: const Color(0x19FC573B),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(35),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: Image.asset(
-                                        'assets/images/car.png',
-                                        width: 14.w,
-                                        height: 14.h,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'Vehicle\nRegistration',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
+                            );
+                          },
+                          child: Container(
+                            width: 109.33.w,
+                            height: 79.h,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                  color: Colors.black.withOpacity(0),
                                 ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 40.h,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          width: 109.33.w,
-                          height: 79.h,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignOutside,
-                                color: Colors.black.withOpacity(0),
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                              borderRadius: BorderRadius.circular(10),
                             ),
-                          ),
-                          child: Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    width: 35.w,
-                                    height: 35.w,
-                                    decoration: ShapeDecoration(
-                                      color: const Color(0x1922AD80),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(35),
+                            child: Column(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 35.w,
+                                      height: 35.w,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0x1922AD80),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(35),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/flash.png',
+                                          width: 14.w,
+                                          height: 14.h,
+                                        ),
                                       ),
                                     ),
-                                    child: Center(
-                                      child: Image.asset(
-                                        'assets/images/flash.png',
-                                        width: 14.w,
-                                        height: 14.h,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'Electricity',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
+                                  ],
                                 ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: 109.33.w,
-                          height: 79.h,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignOutside,
-                                color: Colors.black.withOpacity(0),
-                              ),
-                              borderRadius: BorderRadius.circular(10),
+                                Text(
+                                  'Electricity',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.sp,
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
                             ),
-                          ),
-                          child: Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    width: 35.w,
-                                    height: 35.w,
-                                    decoration: ShapeDecoration(
-                                      color: const Color(0x199747FF),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(35),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: Image.asset(
-                                        'assets/images/estate.png',
-                                        width: 14.w,
-                                        height: 14.h,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'Private Estates',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: 109.33.w,
-                          height: 79.h,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignOutside,
-                                color: Colors.black.withOpacity(0),
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          child: Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    width: 35.w,
-                                    height: 35.w,
-                                    decoration: ShapeDecoration(
-                                      color: const Color(0x1922AD80),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(35),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: Image.asset(
-                                        'assets/images/school.png',
-                                        width: 14.w,
-                                        height: 14.h,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'Exams',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
-                                ),
-                              )
-                            ],
                           ),
                         ),
                       ],
@@ -538,106 +432,383 @@ class Dashboard extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Container(
-                          width: 109.33.w,
-                          height: 79.h,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignOutside,
-                                color: Colors.black.withOpacity(0),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const VehicleReg(),
                               ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          child: Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    width: 35.w,
-                                    height: 35.w,
-                                    decoration: ShapeDecoration(
-                                      color: const Color(0x19127EC8),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(35),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: Image.asset(
-                                        'assets/images/bulk.png',
-                                        width: 14.w,
-                                        height: 14.h,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'Bulk\nOperations',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
+                            );
+                          },
+                          child: Container(
+                            width: 109.33.w,
+                            height: 79.h,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                  color: Colors.black.withOpacity(0),
                                 ),
-                              )
-                            ],
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 35.w,
+                                      height: 35.w,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0x19FC573B),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(35),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/car.png',
+                                          width: 14.w,
+                                          height: 14.h,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'Vehicle\nRegistration',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.sp,
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                        Container(
-                          width: 109.33.w,
-                          height: 79.h,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignOutside,
-                                color: Colors.black.withOpacity(0),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Dashboard(),
                               ),
-                              borderRadius: BorderRadius.circular(10),
+                            );
+                          },
+                          child: Container(
+                            width: 109.33.w,
+                            height: 79.h,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                  color: Colors.black.withOpacity(0),
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 35.w,
+                                      height: 35.w,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0x199747FF),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(35),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/estate.png',
+                                          width: 14.w,
+                                          height: 14.h,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'Private Estates',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.sp,
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
                             ),
                           ),
-                          child: Column(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    width: 35.w,
-                                    height: 35.w,
-                                    decoration: ShapeDecoration(
-                                      color: const Color(0x19FC573B),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(35),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: Image.asset(
-                                        'assets/images/waste.png',
-                                        width: 14.w,
-                                        height: 14.h,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Dashboard(),
                               ),
-                              Text(
-                                'Waste\nTransformers ltd.',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
+                            );
+                          },
+                          child: Container(
+                            width: 109.33.w,
+                            height: 79.h,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                  color: Colors.black.withOpacity(0),
                                 ),
-                              )
-                            ],
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 35.w,
+                                      height: 35.w,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0x1922AD80),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(35),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/school.png',
+                                          width: 14.w,
+                                          height: 14.h,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'Exams',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.sp,
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 40.h,
+                    ),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AirtimeAndData(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 109.33.w,
+                            height: 79.h,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                  color: Colors.black.withOpacity(0),
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 35.w,
+                                      height: 35.w,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0x199747FF),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(35),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/pschool.png',
+                                          width: 14.w,
+                                          height: 14.h,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'Private\nSchools',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.sp,
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Dashboard(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 109.33.w,
+                            height: 79.h,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                  color: Colors.black.withOpacity(0),
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 35.w,
+                                      height: 35.w,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0x19127EC8),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(35),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/bulk.png',
+                                          width: 14.w,
+                                          height: 14.h,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'Bulk\nOperations',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.sp,
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Dashboard(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 109.33.w,
+                            height: 79.h,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
+                                  color: Colors.black.withOpacity(0),
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 35.w,
+                                      height: 35.w,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0x19FC573B),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(35),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/waste.png',
+                                          width: 14.w,
+                                          height: 14.h,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'Waste\nTransformers ltd.',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.sp,
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -661,100 +832,40 @@ class Dashboard extends StatelessWidget {
                     decoration: const BoxDecoration(
                       color: Colors.white,
                     ),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          'assets/images/dashboard.png',
-                          width: 50.w,
-                          height: 50.h,
-                        ),
-                        Text(
-                          'Dashboard',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 10.sp,
-                            fontFamily: 'Nunito',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        )
-                      ],
+                    child: const ImageTile(
+                      defaultImagePath: 'assets/images/dashboard.png',
+                      alternateImagePath: 'assets/images/dashboard2.png',
+                      title: 'Dashboard',
                     ),
                   ),
                   Container(
                     width: 82.w,
                     height: 70.h,
                     decoration: const BoxDecoration(color: Colors.white),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          'assets/images/wallet.png',
-                          width: 50.w,
-                          height: 50.h,
-                        ),
-                        Text(
-                          'My Wallet',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 10.sp,
-                            fontFamily: 'Nunito',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        )
-                      ],
+                    child: const ImageTile(
+                      defaultImagePath: 'assets/images/wallet1.png',
+                      alternateImagePath: 'assets/images/wallet.png',
+                      title: 'My Wallet',
                     ),
                   ),
                   Container(
                     width: 82.w,
                     height: 70.h,
                     decoration: const BoxDecoration(color: Colors.white),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          'assets/images/transactions.png',
-                          width: 50.w,
-                          height: 50.h,
-                        ),
-                        Text(
-                          'Transactions',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 10.sp,
-                            fontFamily: 'Nunito',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        )
-                      ],
+                    child: const ImageTile(
+                      defaultImagePath: 'assets/images/transactions.png',
+                      alternateImagePath: 'assets/images/transactions2.png',
+                      title: 'Transactions',
                     ),
                   ),
                   Container(
                     width: 82.w,
                     height: 70.h,
                     decoration: const BoxDecoration(color: Colors.white),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          'assets/images/profile.png',
-                          width: 50.w,
-                          height: 50.h,
-                        ),
-                        Text(
-                          'My Profile',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 10.sp,
-                            fontFamily: 'Nunito',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        )
-                      ],
+                    child: const ImageTile(
+                      defaultImagePath: 'assets/images/profile.png',
+                      alternateImagePath: 'assets/images/profile2.png',
+                      title: 'My Profile',
                     ),
                   ),
                   Container(

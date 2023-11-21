@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/arrow_button.dart';
+import 'package:zippyworld/screens/dstv.dart';
 
 class TvSubscriptiption extends StatelessWidget {
   const TvSubscriptiption({super.key});
@@ -32,12 +33,17 @@ class TvSubscriptiption extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          'assets/images/back_arrow.png',
-                          width: 24.w,
-                          height: 24.h,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/images/back_arrow.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
                         ),
                       ),
                     ),
@@ -58,60 +64,70 @@ class TvSubscriptiption extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(6.w),
-              child: Row(
-                children: [
-                  CustomButton(
-                    buttonText: 'DSTV',
-                    onTap: () {
-                      // Handle button tap
-                    },
+            SizedBox(
+              height: 43.h,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Dstv(),
                   ),
-                  Image.asset(
-                    'assets/images/front_arrow.png',
-                    width: 20.w,
-                    height: 20.h,
+                );
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: SizedBox(
+                  width: 328.w,
+                  height: 160.h,
+                  child: Image.asset(
+                    'assets/images/DSTV.png',
+                    width: 328.w,
+                    height: 160.h,
+                    fit: BoxFit.cover,
                   ),
-                ],
+                ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(6.w),
-              child: Row(
-                children: [
-                  CustomButton(
-                    buttonText: 'GOTV',
-                    onTap: () {
-                      // Handle button tap
-                    },
+            SizedBox(
+              height: 20.h,
+            ),
+            InkWell(
+              onTap: () {},
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: SizedBox(
+                  width: 328.w,
+                  height: 160.h,
+                  child: Image.asset(
+                    'assets/images/Gotv.png',
+                    width: 328.w,
+                    height: 160.h,
+                    fit: BoxFit.cover,
                   ),
-                  Image.asset(
-                    'assets/images/front_arrow.png',
-                    width: 20.w,
-                    height: 20.h,
-                  ),
-                ],
+                ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(6.w),
-              child: Row(
-                children: [
-                  CustomButton(
-                    buttonText: 'Startimes',
-                    onTap: () {
-                      // Handle button tap
-                    },
-                  ),
-                  Image.asset(
-                    'assets/images/front_arrow.png',
-                    width: 20.w,
-                    height: 20.h,
-                  ),
-                ],
-              ),
+            SizedBox(
+              height: 20.h,
             ),
+            InkWell(
+              onTap: () {},
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: SizedBox(
+                  width: 328.w,
+                  height: 160.h,
+                  child: Image.asset(
+                    'assets/images/Startimes.png',
+                    width: 328.w,
+                    height: 160.h,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

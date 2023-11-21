@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/buttons.dart';
+import 'package:zippyworld/screens/dashboard.dart';
 import 'package:zippyworld/screens/onboarding.dart';
 import 'package:zippyworld/screens/confirm_otp.dart';
 import 'package:zippyworld/screens/personal_info.dart';
+import 'package:zippyworld/screens/register_withbvn.dart';
 import 'package:zippyworld/screens/register_wobvn.dart';
 
-class Register1 extends StatelessWidget {
-  const Register1({super.key});
+class SignIn extends StatelessWidget {
+  const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,7 @@ class Register1 extends StatelessWidget {
                       width: 16.w,
                     ),
                     Text(
-                      'Register with BVN',
+                      'Sign in',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.sp,
@@ -80,7 +82,7 @@ class Register1 extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 8.0),
                         child: Text(
-                          'BVN:',
+                          'Phone number:',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 13.sp,
@@ -106,7 +108,7 @@ class Register1 extends StatelessWidget {
                               width: 1.w, color: const Color(0xFFE7E7E7)),
                           borderRadius: BorderRadius.circular(2),
                         ),
-                        hintText: '1234',
+                        hintText: '-',
                         hintStyle: TextStyle(
                           color: Colors.black,
                           fontSize: 12.sp,
@@ -116,56 +118,92 @@ class Register1 extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 20.h,
+                      height: 9.h,
                     ),
-                    Container(
-                      padding: EdgeInsets.all(16.w),
-                      child: Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(
-                              text: 'To check your BVN, dial ',
-                              style: TextStyle(
-                                color: Colors.black.withOpacity(0.4),
-                                fontSize: 12.sp,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.w500,
-                                height:
-                                    1.0, // You can adjust the line height as needed.
-                              ),
-                            ),
-                            TextSpan(
-                              text: '*565*0#',
-                              style: TextStyle(
-                                color: const Color(0xFF127EC8),
-                                fontSize: 12.sp,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.w500,
-                                height: 1.0,
-                              ),
-                            ),
-                            TextSpan(
-                              text:
-                                  ' on the sim card you used for BVN enrollment.',
-                              style: TextStyle(
-                                color: Colors.black.withOpacity(0.4),
-                                fontSize: 12.sp,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.w500,
-                                height: 1.0,
-                              ),
-                            ),
-                          ],
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/images/mark.png',
+                          width: 16.w,
+                          height: 16.h,
                         ),
-                        textAlign: TextAlign.center,
-                      ),
+                        Text(
+                          'Remember me',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13.sp,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: 26.h,
                     ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                          'PIN:',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13.sp,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextField(
+                      cursorColor: Colors.black,
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(12.r),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              width: 1.w, color: const Color(0xFFE7E7E7)),
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              width: 1.w, color: const Color(0xFFE7E7E7)),
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                        hintText: '-',
+                        hintStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12.sp,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.w300,
+                        ),
+                        suffixIcon:
+                            const Icon(Icons.remove_red_eye), // Eye icon
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        "Forgot PIN",
+                        style: TextStyle(
+                          fontFamily: "Nunito",
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w600,
+                          color: const Color(0xff127ec8),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 43.h,
+                    ),
                     Button(
                       width: 328.w,
-                      text: "Verify",
+                      text: "Sign in",
                       backgroundColor: const Color(0xFF127EC8),
                       textStyle: TextStyle(
                         color: Colors.white,
@@ -178,7 +216,7 @@ class Register1 extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ConfirmOtp(),
+                            builder: (context) => const Dashboard(),
                           ),
                         );
                       },
@@ -191,12 +229,12 @@ class Register1 extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const RegisterWithoutBvn(),
+                            builder: (context) => const Register1(),
                           ),
                         );
                       },
                       child: Text(
-                        "I don't have a BVN",
+                        "I don't have an account",
                         style: TextStyle(
                           color: const Color(0xFFC4C4C4),
                           fontSize: 14.sp,

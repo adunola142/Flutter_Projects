@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zippyworld/components/arrow_button.dart';
+import 'package:zippyworld/screens/electricity_sub.dart';
 
 class Electricity extends StatelessWidget {
   const Electricity({super.key});
@@ -32,12 +33,17 @@ class Electricity extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          'assets/images/back_arrow.png',
-                          width: 24.w,
-                          height: 24.h,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/images/back_arrow.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
                         ),
                       ),
                     ),
@@ -76,6 +82,29 @@ class Electricity extends StatelessWidget {
                 ],
               ),
             ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ElectricitySub(),
+                  ),
+                );
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: SizedBox(
+                  width: 328.w,
+                  height: 160.h,
+                  child: Image.asset(
+                    'assets/images/Zippyplatinum.png',
+                    width: 328.w,
+                    height: 160.h,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.all(6.w),
               child: Row(
@@ -92,6 +121,29 @@ class Electricity extends StatelessWidget {
                     height: 20.h,
                   ),
                 ],
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ElectricitySub(),
+                  ),
+                );
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: SizedBox(
+                  width: 328.w,
+                  height: 160.h,
+                  child: Image.asset(
+                    'assets/images/Zippydiamond.png',
+                    width: 328.w,
+                    height: 160.h,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
           ],

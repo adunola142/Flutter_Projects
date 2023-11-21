@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zippyworld/screens/fund_wallet.dart';
+
 
 class Wallet extends StatelessWidget {
   const Wallet({super.key});
 
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       home: Scaffold(
         body: SingleChildScrollView(
@@ -310,15 +314,20 @@ class Wallet extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    Text(
-                      'Copy',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: const Color(0xFF127EC8),
-                        fontSize: 14.sp,
-                        fontFamily: 'Nunito',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
+                    GestureDetector(
+                      onTap: () {
+                        
+                      },
+                      child: Text(
+                        'Copy',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: const Color(0xFF127EC8),
+                          fontSize: 14.sp,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
                       ),
                     ),
                   ],
@@ -358,15 +367,20 @@ class Wallet extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    Text(
-                      'Copy',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: const Color(0xFF127EC8),
-                        fontSize: 14.sp,
-                        fontFamily: 'Nunito',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
+                    GestureDetector(
+                      onTap: () {
+                        
+                      },
+                      child: Text(
+                        'Copy',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: const Color(0xFF127EC8),
+                          fontSize: 14.sp,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
                       ),
                     ),
                   ],
@@ -400,12 +414,22 @@ class Wallet extends StatelessWidget {
               SizedBox(
                 height: 40.h,
               ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Image.asset(
-                  'assets/images/fund_wallet.png',
-                  width: 50.w,
-                  height: 50.h,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FundWallet(),
+                    ),
+                  );
+                },
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Image.asset(
+                    'assets/images/fund_wallet.png',
+                    width: 50.w,
+                    height: 50.h,
+                  ),
                 ),
               ),
               SizedBox(

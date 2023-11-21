@@ -12,6 +12,8 @@ import 'package:zippyworld/screens/fund_wallet.dart';
 import 'package:zippyworld/screens/onboarding.dart';
 import 'package:zippyworld/screens/profile.dart';
 import 'package:zippyworld/screens/security_answer.dart';
+import 'package:zippyworld/screens/select_bank.dart';
+import 'package:zippyworld/screens/send_money.dart';
 import 'package:zippyworld/screens/transaction_details_modal.dart';
 import 'package:zippyworld/screens/transactions.dart';
 import 'package:zippyworld/screens/tv_subscription.dart';
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const BuyAirtime(),
+        home: const Onboarding(),
       ),
     );
   }

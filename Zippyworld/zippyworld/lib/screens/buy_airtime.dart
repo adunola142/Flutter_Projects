@@ -4,6 +4,7 @@ import 'package:zippyworld/components/buttons.dart';
 import 'package:zippyworld/components/drop_down.dart';
 
 import 'package:zippyworld/components/textbox.dart';
+import 'package:zippyworld/screens/onboarding.dart';
 import 'package:zippyworld/screens/security_answer.dart';
 
 class BuyAirtime extends StatefulWidget {
@@ -53,13 +54,18 @@ class _BuyAirtimeState extends State<BuyAirtime> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: IntrinsicWidth(
-                        child: Image.asset(
-                          'assets/images/back_arrow.png',
-                          width: 24.w,
-                          height: 24.h,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: IntrinsicWidth(
+                          child: Image.asset(
+                            'assets/images/back_arrow.png',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
                         ),
                       ),
                     ),

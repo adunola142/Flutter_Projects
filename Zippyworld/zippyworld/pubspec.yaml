@@ -79,9 +79,13 @@ flutter:
     - assets/images/star_frame.png
     - assets/images/fund_wallet.png
     - assets/images/transactions.png
+    - assets/images/transactions2.png
     - assets/images/dashboard.png
+    - assets/images/dashboard2.png
     - assets/images/wallet.png
+    - assets/images/wallet1.png
     - assets/images/profile.png
+    - assets/images/profile2.png
     - assets/images/copy.png
     - assets/images/x.png
     - assets/images/download.png
@@ -95,6 +99,7 @@ flutter:
     - assets/images/hide.png
     - assets/images/plus.png
     - assets/images/school.png
+    - assets/images/pschool.png
     - assets/images/waste.png
     - assets/images/tv.png
     - assets/images/phone.png
@@ -108,6 +113,16 @@ flutter:
     - assets/images/smile.png
     - assets/images/spectranet.png
     - assets/images/glo.png
+    - assets/images/mark.png
+    - assets/images/banktransfer.png
+    - assets/images/wallettransfer.png
+    - assets/images/buyairtime.png
+    - assets/images/buydata.png
+    - assets/images/Gotv.png
+    - assets/images/DSTV.png
+    - assets/images/Startimes.png
+    - assets/images/Zippydiamond.png
+    - assets/images/Zippyplatinum.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
